@@ -1,0 +1,19 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    make \
+    pkg-config \
+    librdkafka-dev \
+    librdkafka1 \
+    valgrind \
+    gdb \
+    bsdextrautils \
+    file \
+    vim \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
